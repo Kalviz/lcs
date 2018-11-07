@@ -1,0 +1,57 @@
+{% extends 'Case/base.html' %}
+{% block content %}
+
+<div class="container">
+    <h2>Add a case</h2>
+
+<form method="POST">
+    {% csrf_token %}
+<table>
+    <tr><td><button type="submit">Save</button><button type="submit" onclick="window.location='case'">Back</button></td></tr>
+    <tr><th><label for="id_caseid">Caseid:</label></th><td><input type="text" name="caseid" maxlength="20" required id="id_caseid"></td></tr>
+    <tr><th><label for="id_title">Title:</label></th><td><input type="text" name="title" maxlength="125" required id="id_title"></td></tr>
+    <tr><th><label for="id_owner">Owner:</label></th><td><input type="text" name="owner" maxlength="125" required id="id_owner"></td></tr>
+    <tr><th><label for="id_catagory">Catagory:</label></th>
+        <td>
+        <select name="catagory" id="catagory" required id="id_catagory">
+          <option value="Incident">Incident</option>
+          <option value="Change Request">Change Request</option>
+          <option value="Service Request">Service Request</option>
+        </select>
+        </td>
+    </tr>
+    <tr><th><label for="id_subcatagory">Catagory:</label></th>
+        <td>
+        <select name="subcatagory" id="subcatagory" required id="id_subcatagory">
+          <option value="Manufacturing">Manufacturing</option>
+          <option value="Finance">Finance</option>
+          <option value="Distribution">Distribution</option>
+          <option value="Development">Development</option>
+          <option value="Permission">Permission</option>
+
+        </select>
+        </td>
+    </tr>
+
+    <tr><th><label for="id_status">Status:</label></th>
+        <td>
+        <select name="status" id="status" required id="id_status">
+          <option value="Open">Open</option>
+          <option value="Queued">Queued</option>
+          <option value="Completed">Completed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+        </td>
+    </tr>
+    <tr><th><label for="id_progress">Progress:</label></th><td><input type="text" name="progress" maxlength="100" required id="id_progress"></td></tr>
+    <tr><th><label for="id_progressDetails">Progressdetails:</label></th><td><textarea name="progressDetails" cols="40" rows="10" required id="id_progressDetails">
+    </textarea></td></tr>
+    <tr><th><label for="id_incidentReporter">Incidentreporter:</label></th><td><input type="text" name="incidentReporter" maxlength="50" required id="id_incidentReporter"></td></tr>
+    <tr><th><label for="id_incidentOwner">Incidentowner:</label></th><td><input type="text" name="incidentOwner" maxlength="50" required id="id_incidentOwner"></td></tr>
+    <tr><th><label for="id_priority">Priority:</label></th><td><input type="text" name="priority" maxlength="10" required id="id_priority"></td></tr>
+    <tr><th><label for="id_dateCreated">Datecreated:</label></th><td><input type="text" name="dateCreated" required id="id_dateCreated"></td></tr>
+    </table>
+</form>
+    </div>
+
+{% endblock %}

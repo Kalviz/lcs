@@ -1,0 +1,34 @@
+{% extends 'Case/base.html' %}
+{% block content %}
+<br>
+
+<div class="container">
+    <h1>Case Tracker</h1>
+    <button type="button" onclick="window.location='{% url 'add' %}'" class="btn btn-success">Add</button>
+
+        <table  border="1">
+              <thead>
+                <tr class="table-active">
+                    <th scope="col"></th>
+                    <th scope="col">Case Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Catagory</th>
+                    <th scope="col">Sub Catagory</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Progress</th>
+                    <th scope="col">Progress Details</th>
+                    <th scope="col">Incident Reporter</th>
+                    <th scope="col">Incident Owner</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Date Created</th>
+                </tr>
+              </thead>
+
+     {% for case in entri %}
+        {% include 'Case/_casedetails.html' %}
+     {% endfor %}
+        </table>
+</div>
+
+{% endblock %}
